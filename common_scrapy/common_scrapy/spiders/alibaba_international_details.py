@@ -43,7 +43,7 @@ class AlibabaInternationalDetailsSpider(scrapy.Spider):
         这里重写了start_requests方法，分别请求了用户查询的url和关注列表的查询以及粉丝列表信息查询
         :return:
         """
-        for i in range(1, 10):  # 101
+        for i in range(10, 11):  # 101
             yield scrapy.Request(self.start_url.format(str(i)), callback=self.parse)
 
     def parse(self, response):

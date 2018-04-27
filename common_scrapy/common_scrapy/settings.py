@@ -98,6 +98,12 @@ ITEM_PIPELINES = {
 
 MONGO_URI = 'localhost'
 MONGO_DATABASE = 'alibaba_international_3d_wall_panels'
-INFORMATIONS_MONGO_DATABASE = 'alibaba_international_informations'
+INFORMATIONS_MONGO_DATABASE = 'alibaba_international_informations2'
 
+# 替换scrapy调度器
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 
+# 去重
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+
+REDIS_URL='redis://root:@192.168.0.137:6379'
